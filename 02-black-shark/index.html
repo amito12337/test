@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TECHNOVA — Gaming &amp; Tech Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0c10;
+  --bg-2:#10141c;
+  --panel:#151a24;
+  --line:#232b3a;
+  --neon:#00ff88;
+  --neon-dim:#00cc6d;
+  --cyan:#00d9ff;
+  --text:#e8ecf4;
+  --muted:#8a94a8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Rajdhani',system-ui,sans-serif;font-size:16px}
+a{text-decoration:none;color:inherit}
+h1,h2,h3,.logo{font-family:'Orbitron',sans-serif}
+.container{max-width:1240px;margin:0 auto;padding:0 22px}
+
+/* ── Announce bar ────────────────────── */
+.announce{background:var(--neon);color:#04140b;text-align:center;font-weight:700;font-size:13.5px;letter-spacing:1.5px;padding:8px 14px;text-transform:uppercase}
+
+/* ── Header ──────────────────────────── */
+.header{background:rgba(10,12,16,.92);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;backdrop-filter:blur(10px)}
+.header .container{display:flex;align-items:center;height:70px;gap:34px}
+.logo{font-size:21px;font-weight:900;letter-spacing:2px;display:flex;align-items:center;gap:10px}
+.logo .mark{width:34px;height:34px;background:linear-gradient(135deg,var(--neon),var(--cyan));clip-path:polygon(50% 0,100% 30%,100% 70%,50% 100%,0 70%,0 30%);display:flex;align-items:center;justify-content:center;color:#04140b;font-size:15px;font-weight:900}
+.logo span{color:var(--neon)}
+.menu{display:flex;gap:4px;margin-left:8px}
+.menu a{padding:9px 15px;font-weight:600;font-size:15px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);border-radius:6px}
+.menu a:hover,.menu a.active{color:var(--neon)}
+.menu a.active{background:rgba(0,255,136,.08)}
+.header-right{margin-left:auto;display:flex;align-items:center;gap:14px}
+.icon-btn{width:40px;height:40px;border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;position:relative;background:var(--bg-2);cursor:pointer}
+.icon-btn:hover{border-color:var(--neon)}
+.icon-btn .count{position:absolute;top:-6px;right:-6px;background:var(--neon);color:#04140b;font-size:10px;font-weight:800;min-width:17px;height:17px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif}
+
+/* ── Hero ────────────────────────────── */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(700px 420px at 78% 42%,rgba(0,255,136,.14),transparent 62%),
+  radial-gradient(520px 380px at 18% 82%,rgba(0,217,255,.1),transparent 60%)}
+.hero .container{position:relative;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:40px;padding-top:74px;padding-bottom:84px}
+.tag{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(0,255,136,.4);color:var(--neon);font-size:12px;font-weight:700;letter-spacing:2.5px;padding:7px 16px;border-radius:3px;text-transform:uppercase;margin-bottom:22px;background:rgba(0,255,136,.05)}
+.tag::before{content:"";width:7px;height:7px;background:var(--neon);border-radius:50%;box-shadow:0 0 10px var(--neon)}
+.hero h1{font-size:52px;font-weight:900;line-height:1.06;letter-spacing:1px;text-transform:uppercase}
+.hero h1 span{color:transparent;-webkit-text-stroke:1.5px var(--neon);text-stroke:1.5px var(--neon)}
+.hero p{margin:20px 0 32px;color:var(--muted);font-size:18px;max-width:440px;line-height:1.6}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;padding:14px 30px;cursor:pointer;border:0}
+.btn-neon{background:var(--neon);color:#04140b;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px)}
+.btn-neon:hover{background:var(--cyan)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--neon);color:var(--neon)}
+.hero-stats{display:flex;gap:38px;margin-top:44px}
+.stat b{display:block;font-family:'Orbitron',sans-serif;font-size:24px;color:var(--neon)}
+.stat span{font-size:13px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:380px}
+.hex{width:340px;height:340px;background:linear-gradient(160deg,var(--panel),#0d1118);border:1px solid var(--line);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;font-size:130px;filter:drop-shadow(0 0 40px rgba(0,255,136,.25))}
+.chip{position:absolute;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:13px;font-weight:600}
+.chip b{color:var(--neon);display:block;font-size:15px}
+.chip.c1{top:26px;left:8px}
+.chip.c2{bottom:44px;right:0}
+.chip.c3{top:52%;left:-14px}
+
+/* ── Marquee strip ───────────────────── */
+.strip{border-bottom:1px solid var(--line);background:var(--bg-2);overflow:hidden;white-space:nowrap;padding:12px 0;font-family:'Orbitron',sans-serif;font-size:13px;letter-spacing:3px;color:var(--muted);text-transform:uppercase}
+.strip span{margin:0 30px}
+.strip b{color:var(--neon)}
+
+/* ── Sections ────────────────────────── */
+.section{padding:70px 0 10px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:34px}
+.sec-head small{color:var(--neon);font-weight:700;font-size:12px;letter-spacing:3px;text-transform:uppercase}
+.sec-head h2{font-size:30px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-top:8px}
+.sec-head a{color:var(--muted);font-weight:600;letter-spacing:1px;font-size:14px;text-transform:uppercase}
+.sec-head a:hover{color:var(--neon)}
+
+/* Categories */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat-card{background:var(--panel);border:1px solid var(--line);padding:30px 24px;position:relative;overflow:hidden;transition:.2s;clip-path:polygon(16px 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%,0 16px)}
+.cat-card:hover{border-color:var(--neon);transform:translateY(-4px)}
+.cat-card .ico{font-size:40px;display:block;margin-bottom:16px}
+.cat-card h3{font-size:16px;letter-spacing:1px;text-transform:uppercase}
+.cat-card p{color:var(--muted);font-size:14px;margin-top:6px}
+.cat-card .arrow{position:absolute;right:18px;bottom:14px;color:var(--neon);font-size:18px}
+
+/* Product cards */
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.prod{background:var(--panel);border:1px solid var(--line);position:relative;transition:.2s;display:flex;flex-direction:column}
+.prod:hover{border-color:var(--neon);box-shadow:0 0 34px rgba(0,255,136,.12);transform:translateY(-4px)}
+.prod .ribbon{position:absolute;top:12px;left:12px;z-index:2;background:var(--neon);color:#04140b;font-weight:800;font-size:12px;letter-spacing:1px;padding:4px 10px;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
+.prod .ribbon.blue{background:var(--cyan)}
+.prod .thumb{height:190px;display:flex;align-items:center;justify-content:center;font-size:70px;background:radial-gradient(300px 160px at 50% 60%,rgba(0,255,136,.09),transparent 70%),linear-gradient(170deg,#171d29,#0e1219)}
+.prod .body{padding:18px;border-top:1px solid var(--line);flex:1;display:flex;flex-direction:column}
+.prod .type{color:var(--muted);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.prod h4{font-size:17px;font-weight:700;margin:7px 0 4px;line-height:1.3}
+.prod .rating{color:var(--neon);font-size:13px;letter-spacing:2px}
+.prod .rating i{color:var(--muted);font-style:normal;font-size:12.5px;letter-spacing:0;margin-left:6px}
+.prod .price-row{display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:14px}
+.prod .price{font-family:'Orbitron',sans-serif;font-size:18px;font-weight:800;color:var(--neon)}
+.prod .old{color:var(--muted);text-decoration:line-through;font-size:14px}
+.prod .buy{margin:0 18px 18px;background:transparent;border:1px solid var(--neon);color:var(--neon);font-family:'Rajdhani',sans-serif;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;padding:11px 0;cursor:pointer;transition:.15s;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.prod .buy:hover{background:var(--neon);color:#04140b}
+
+/* Big promo banner */
+.promo{margin:70px 0 0;position:relative;overflow:hidden;border:1px solid var(--line);background:linear-gradient(120deg,#0e1420 30%,#0a1f16 100%)}
+.promo::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 300px at 85% 50%,rgba(0,255,136,.16),transparent 65%)}
+.promo .inner{position:relative;display:flex;align-items:center;justify-content:space-between;gap:30px;padding:54px 58px;flex-wrap:wrap}
+.promo small{color:var(--neon);font-weight:700;letter-spacing:3px;font-size:12px;text-transform:uppercase}
+.promo h3{font-size:34px;text-transform:uppercase;letter-spacing:1px;margin:10px 0 8px;max-width:520px;line-height:1.15}
+.promo p{color:var(--muted);font-size:16px;max-width:460px}
+.promo .big-emoji{font-size:120px;filter:drop-shadow(0 0 30px rgba(0,255,136,.4))}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:70px}
+.feat{border:1px solid var(--line);background:var(--bg-2);padding:24px;display:flex;gap:16px;align-items:center}
+.feat .ico{font-size:28px}
+.feat b{display:block;font-size:15px;letter-spacing:.5px;text-transform:uppercase}
+.feat span{color:var(--muted);font-size:13.5px}
+
+/* Newsletter */
+.nl{margin:70px 0;text-align:center;border:1px solid var(--line);background:var(--panel);padding:56px 30px;position:relative;overflow:hidden}
+.nl::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 200px at 50% 0,rgba(0,255,136,.12),transparent 70%)}
+.nl h3{font-size:26px;text-transform:uppercase;letter-spacing:1.5px;position:relative}
+.nl p{color:var(--muted);margin:12px auto 28px;max-width:440px;position:relative}
+.nl-form{position:relative;display:flex;max-width:460px;margin:0 auto;border:1px solid var(--line);background:var(--bg)}
+.nl-form input{flex:1;background:transparent;border:0;outline:0;color:var(--text);padding:15px 18px;font-family:'Rajdhani',sans-serif;font-size:15px}
+.nl-form button{background:var(--neon);border:0;color:#04140b;font-family:'Rajdhani',sans-serif;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:0 26px;cursor:pointer}
+
+/* ── Footer ──────────────────────────── */
+footer{border-top:1px solid var(--line);background:var(--bg-2)}
+.f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;padding:52px 0 40px}
+.f-grid h5{font-family:'Orbitron',sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px;color:var(--neon)}
+.f-grid a{display:block;color:var(--muted);padding:5px 0;font-size:15px}
+.f-grid a:hover{color:var(--text)}
+.f-brand p{color:var(--muted);font-size:15px;line-height:1.6;margin-top:14px;max-width:280px}
+.f-bottom{border-top:1px solid var(--line);padding:18px 0;display:flex;justify-content:space-between;color:var(--muted);font-size:13.5px;letter-spacing:1px;flex-wrap:wrap;gap:10px}
+.f-bottom b{color:var(--neon)}
+
+@media(max-width:980px){
+  .hero .container{grid-template-columns:1fr;padding-top:50px;padding-bottom:56px}
+  .hero-visual{display:none}
+  .menu{display:none}
+  .cat-grid,.features{grid-template-columns:repeat(2,1fr)}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:38px}
+  .promo .inner{padding:40px 30px}
+}
+@media(max-width:560px){
+  .prod-grid,.cat-grid,.features{grid-template-columns:1fr}
+  .hero-stats{gap:22px}
+}
+</style>
+</head>
+<body>
+
+<div class="announce">⚡ Soldes Gamer — Jusqu'à -60% + livraison gratuite dès 499 DH ⚡</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="container">
+    <a href="#" class="logo"><span class="mark">T</span>TECH<span>NOVA</span></a>
+    <nav class="menu">
+      <a href="#" class="active">Accueil</a>
+      <a href="#">Audio</a>
+      <a href="#">Montres</a>
+      <a href="#">Gaming</a>
+      <a href="#">Accessoires</a>
+      <a href="#">Promos</a>
+    </nav>
+    <div class="header-right">
+      <div class="icon-btn">🔍</div>
+      <div class="icon-btn">👤</div>
+      <div class="icon-btn">🛒<span class="count">3</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div>
+      <span class="tag">Game is real</span>
+      <h1>Équipe-toi.<br>Domine <span>le jeu.</span></h1>
+      <p>Écouteurs, montres connectées et gear gaming haute performance, livrés partout au Maroc. La technologie qui suit ton rythme.</p>
+      <div class="hero-cta">
+        <button class="btn btn-neon">Acheter maintenant ▸</button>
+        <button class="btn btn-ghost">Voir les promos</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>+50K</b><span>Clients</span></div>
+        <div class="stat"><b>24H</b><span>Livraison express</span></div>
+        <div class="stat"><b>12 MOIS</b><span>Garantie</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hex">🎧</div>
+      <div class="chip c1"><b>T23 PRO</b>Bluetooth 5.4</div>
+      <div class="chip c2"><b>40H</b>Autonomie</div>
+      <div class="chip c3"><b>IPX5</b>Étanche</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <span>▮ Livraison partout au Maroc</span><span>▮ Paiement à la livraison</span><span>▮ Produits <b>100% originaux</b></span><span>▮ Garantie officielle <b>12 mois</b></span><span>▮ Support 7j/7</span>
+</div>
+
+<!-- Categories -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head">
+      <div><small>// Explorer</small><h2>Catégories</h2></div>
+      <a href="#">Tout voir ▸</a>
+    </div>
+    <div class="cat-grid">
+      <a href="#" class="cat-card"><span class="ico">🎧</span><h3>Écouteurs</h3><p>TWS, casques gaming</p><span class="arrow">▸</span></a>
+      <a href="#" class="cat-card"><span class="ico">⌚</span><h3>Montres</h3><p>Smartwatches sport</p><span class="arrow">▸</span></a>
+      <a href="#" class="cat-card"><span class="ico">🎮</span><h3>Gaming</h3><p>Manettes, claviers, souris</p><span class="arrow">▸</span></a>
+      <a href="#" class="cat-card"><span class="ico">🔌</span><h3>Accessoires</h3><p>Chargeurs, powerbanks</p><span class="arrow">▸</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Best sellers -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head">
+      <div><small>// Top ventes</small><h2>Les plus vendus</h2></div>
+      <a href="#">Tout voir ▸</a>
+    </div>
+    <div class="prod-grid">
+      <div class="prod">
+        <span class="ribbon">-60%</span>
+        <div class="thumb">🎧</div>
+        <div class="body">
+          <span class="type">Écouteurs TWS</span>
+          <h4>T23 — Basses profondes</h4>
+          <div class="rating">★★★★★<i>(486 avis)</i></div>
+          <div class="price-row"><span class="price">249 DH</span><span class="old">619 DH</span></div>
+        </div>
+        <button class="buy">+ Ajouter au panier</button>
+      </div>
+      <div class="prod">
+        <span class="ribbon blue">NEW</span>
+        <div class="thumb">⌚</div>
+        <div class="body">
+          <span class="type">Smartwatch</span>
+          <h4>Nova Watch S2 AMOLED</h4>
+          <div class="rating">★★★★★<i>(212 avis)</i></div>
+          <div class="price-row"><span class="price">449 DH</span><span class="old">799 DH</span></div>
+        </div>
+        <button class="buy">+ Ajouter au panier</button>
+      </div>
+      <div class="prod">
+        <span class="ribbon">-45%</span>
+        <div class="thumb">🎮</div>
+        <div class="body">
+          <span class="type">Gaming</span>
+          <h4>Manette Pro X sans fil</h4>
+          <div class="rating">★★★★☆<i>(158 avis)</i></div>
+          <div class="price-row"><span class="price">329 DH</span><span class="old">599 DH</span></div>
+        </div>
+        <button class="buy">+ Ajouter au panier</button>
+      </div>
+      <div class="prod">
+        <div class="thumb">🔊</div>
+        <div class="body">
+          <span class="type">Audio</span>
+          <h4>Enceinte Bass+ RGB</h4>
+          <div class="rating">★★★★★<i>(97 avis)</i></div>
+          <div class="price-row"><span class="price">379 DH</span></div>
+        </div>
+        <button class="buy">+ Ajouter au panier</button>
+      </div>
+    </div>
+
+    <!-- Promo banner -->
+    <div class="promo">
+      <div class="inner">
+        <div>
+          <small>// Offre limitée</small>
+          <h3>Pack Gamer complet à <span style="color:var(--neon)">999 DH</span></h3>
+          <p>Casque + clavier RGB + souris 12 000 DPI + tapis XXL. Le setup complet pour dominer, au prix d'un seul périphérique.</p>
+        </div>
+        <span class="big-emoji">⌨️</span>
+        <button class="btn btn-neon">Je prends le pack ▸</button>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="features">
+      <div class="feat"><span class="ico">🚀</span><div><b>Livraison 24-48h</b><span>Partout au Maroc</span></div></div>
+      <div class="feat"><span class="ico">💵</span><div><b>Cash à la livraison</b><span>Payez à la réception</span></div></div>
+      <div class="feat"><span class="ico">✅</span><div><b>100% Original</b><span>Produits authentiques</span></div></div>
+      <div class="feat"><span class="ico">🔧</span><div><b>Garantie 12 mois</b><span>SAV réactif 7j/7</span></div></div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="nl">
+      <h3>Rejoins la team <span style="color:var(--neon)">TECHNOVA</span></h3>
+      <p>Sois le premier informé des drops, nouvelles collections et offres exclusives.</p>
+      <div class="nl-form">
+        <input type="email" placeholder="ton@email.com">
+        <button>GO ▸</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a href="#" class="logo"><span class="mark">T</span>TECH<span>NOVA</span></a>
+        <p>La destination gaming &amp; tech au Maroc. Gear haute performance, prix imbattables, livraison express.</p>
+      </div>
+      <div>
+        <h5>Boutique</h5>
+        <a href="#">Écouteurs</a><a href="#">Montres connectées</a><a href="#">Gaming</a><a href="#">Accessoires</a><a href="#">Promotions</a>
+      </div>
+      <div>
+        <h5>Aide</h5>
+        <a href="#">Suivi de commande</a><a href="#">Livraison &amp; retours</a><a href="#">Garantie</a><a href="#">FAQ</a><a href="#">Contact</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="#">📞 06 00 00 00 00</a><a href="#">✉️ contact@technova.ma</a><a href="#">📍 Casablanca, Maroc</a><a href="#">Instagram / TikTok / Facebook</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 <b>TECHNOVA</b> — Tous droits réservés. Maquette design (démo).</span>
+      <span>CMI · VISA · MASTERCARD · CASH</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
