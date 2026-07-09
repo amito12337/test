@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TECHNOVA — Électroménager &amp; High-Tech au Maroc</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#e31e24;
+  --red-dark:#b8121a;
+  --navy:#141b2e;
+  --navy-2:#1e2a47;
+  --gray-bg:#f4f5f7;
+  --gray-line:#e6e8ec;
+  --text:#1b2230;
+  --text-soft:#6b7280;
+  --yellow:#ffc426;
+  --green:#0aa554;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--gray-bg)}
+img{max-width:100%}
+a{text-decoration:none;color:inherit}
+.container{max-width:1220px;margin:0 auto;padding:0 20px}
+
+/* ── Top bar ─────────────────────────── */
+.topbar{background:var(--navy);color:#c7cede;font-size:12.5px}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;height:34px}
+.topbar strong{color:var(--yellow)}
+.topbar-links{display:flex;gap:18px}
+.topbar-links a:hover{color:#fff}
+
+/* ── Header ──────────────────────────── */
+.header{background:#fff;border-bottom:1px solid var(--gray-line)}
+.header .container{display:flex;align-items:center;gap:28px;height:78px}
+.logo{font-size:25px;font-weight:900;letter-spacing:-.5px;white-space:nowrap}
+.logo span{color:var(--red)}
+.logo em{display:block;font-style:normal;font-size:10px;font-weight:600;letter-spacing:2.5px;color:var(--text-soft);text-transform:uppercase}
+.search{flex:1;display:flex;border:2px solid var(--red);border-radius:8px;overflow:hidden}
+.search input{flex:1;border:0;outline:0;padding:11px 16px;font-size:14px;font-family:inherit}
+.search button{background:var(--red);color:#fff;border:0;padding:0 26px;font-weight:700;font-size:14px;cursor:pointer}
+.search button:hover{background:var(--red-dark)}
+.header-actions{display:flex;gap:22px}
+.h-action{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--text-soft)}
+.h-action b{display:block;font-size:13px;color:var(--text)}
+.h-icon{width:38px;height:38px;border-radius:50%;background:var(--gray-bg);display:flex;align-items:center;justify-content:center;font-size:17px;position:relative}
+.badge-count{position:absolute;top:-4px;right:-4px;background:var(--red);color:#fff;font-size:10px;font-weight:700;width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+
+/* ── Nav ─────────────────────────────── */
+.nav{background:var(--red);color:#fff}
+.nav .container{display:flex;align-items:center;height:46px;gap:6px}
+.all-cats{background:var(--red-dark);height:46px;display:flex;align-items:center;gap:10px;padding:0 20px;font-weight:700;font-size:13.5px;cursor:pointer}
+.nav-links{display:flex}
+.nav-links a{padding:0 15px;line-height:46px;font-size:13.5px;font-weight:600}
+.nav-links a:hover{background:rgba(0,0,0,.15)}
+.nav .promo-tag{margin-left:auto;background:var(--yellow);color:var(--navy);font-size:12px;font-weight:800;padding:5px 12px;border-radius:20px}
+
+/* ── Hero ────────────────────────────── */
+.hero{padding:22px 0}
+.hero .container{display:grid;grid-template-columns:2.1fr 1fr;gap:18px}
+.hero-main{background:linear-gradient(115deg,var(--navy) 0%,var(--navy-2) 55%,#31457a 100%);border-radius:14px;color:#fff;padding:48px 52px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;min-height:340px}
+.hero-main::after{content:"📺";position:absolute;right:36px;top:50%;transform:translateY(-50%);font-size:170px;opacity:.92;filter:drop-shadow(0 18px 30px rgba(0,0,0,.4))}
+.hero-kicker{display:inline-block;background:var(--red);font-size:11.5px;font-weight:800;letter-spacing:1.5px;padding:6px 14px;border-radius:20px;margin-bottom:18px;width:max-content}
+.hero-main h1{font-size:40px;font-weight:900;line-height:1.12;max-width:430px}
+.hero-main h1 span{color:var(--yellow)}
+.hero-main p{margin:14px 0 26px;color:#aeb8cf;font-size:15px;max-width:380px}
+.btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:14px;padding:13px 30px;border-radius:8px;width:max-content}
+.btn:hover{background:var(--red-dark)}
+.hero-side{display:grid;grid-template-rows:1fr 1fr;gap:18px}
+.side-card{border-radius:14px;padding:24px 26px;color:#fff;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.side-card.a{background:linear-gradient(120deg,#e31e24,#ff6a3d)}
+.side-card.b{background:linear-gradient(120deg,#0aa554,#0c7a63)}
+.side-card::after{position:absolute;right:16px;bottom:8px;font-size:74px;opacity:.9}
+.side-card.a::after{content:"📱"}
+.side-card.b::after{content:"🧺"}
+.side-card small{font-size:11px;font-weight:700;letter-spacing:1.5px;opacity:.85;text-transform:uppercase}
+.side-card h3{font-size:20px;font-weight:800;margin:6px 0 4px;max-width:170px}
+.side-card a{font-size:13px;font-weight:700;text-decoration:underline}
+
+/* ── Services strip ──────────────────── */
+.services{background:#fff;border-radius:14px;margin-top:4px}
+.services .inner{display:grid;grid-template-columns:repeat(4,1fr);padding:20px 10px}
+.service{display:flex;align-items:center;gap:14px;justify-content:center;padding:6px 14px}
+.service + .service{border-left:1px solid var(--gray-line)}
+.service .ico{font-size:28px}
+.service b{display:block;font-size:13.5px}
+.service span{font-size:12px;color:var(--text-soft)}
+
+/* ── Sections ────────────────────────── */
+.section{padding:34px 0 8px}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.section-head h2{font-size:22px;font-weight:800;display:flex;align-items:center;gap:12px}
+.section-head h2::before{content:"";width:5px;height:24px;background:var(--red);border-radius:3px}
+.see-all{font-size:13px;font-weight:700;color:var(--red)}
+
+/* Categories */
+.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.cat{background:#fff;border-radius:12px;padding:22px 10px 18px;text-align:center;border:1px solid transparent;transition:.18s}
+.cat:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 10px 24px rgba(20,27,46,.08)}
+.cat .ico{width:64px;height:64px;margin:0 auto 12px;border-radius:50%;background:var(--gray-bg);display:flex;align-items:center;justify-content:center;font-size:30px}
+.cat b{font-size:13px;display:block}
+.cat span{font-size:11.5px;color:var(--text-soft)}
+
+/* Flash sale */
+.flash-wrap{background:#fff;border-radius:14px;padding:24px;border-top:4px solid var(--red)}
+.flash-head{display:flex;align-items:center;gap:18px;margin-bottom:20px;flex-wrap:wrap}
+.flash-head h2{font-size:21px;font-weight:800;color:var(--red)}
+.timer{display:flex;gap:8px;align-items:center}
+.timer .unit{background:var(--navy);color:#fff;font-weight:800;font-size:16px;border-radius:8px;padding:8px 11px;min-width:44px;text-align:center}
+.timer .unit small{display:block;font-size:9px;font-weight:600;color:#9aa5bd;letter-spacing:1px}
+.timer .sep{font-weight:800;color:var(--navy)}
+.flash-head .see-all{margin-left:auto}
+
+.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+
+/* Product card */
+.card{background:#fff;border:1px solid var(--gray-line);border-radius:12px;overflow:hidden;position:relative;transition:.18s;display:flex;flex-direction:column}
+.card:hover{box-shadow:0 12px 28px rgba(20,27,46,.1);border-color:#d6dae2;transform:translateY(-3px)}
+.card .thumb{height:170px;display:flex;align-items:center;justify-content:center;font-size:64px;background:linear-gradient(160deg,#f7f8fa,#eceef2)}
+.promo-badge{position:absolute;top:10px;left:10px;background:var(--red);color:#fff;font-size:11px;font-weight:800;padding:4px 9px;border-radius:6px}
+.new-badge{position:absolute;top:10px;left:10px;background:var(--green);color:#fff;font-size:11px;font-weight:800;padding:4px 9px;border-radius:6px}
+.wish{position:absolute;top:8px;right:8px;width:30px;height:30px;border-radius:50%;background:#fff;border:1px solid var(--gray-line);display:flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer}
+.card .info{padding:13px 14px 15px;display:flex;flex-direction:column;gap:5px;flex:1}
+.card .cat-tag{font-size:10.5px;font-weight:700;letter-spacing:1px;color:var(--text-soft);text-transform:uppercase}
+.card h4{font-size:13.5px;font-weight:600;line-height:1.35;min-height:36px}
+.stars{color:var(--yellow);font-size:12px;letter-spacing:1px}
+.stars span{color:var(--text-soft);font-size:11px;letter-spacing:0;margin-left:4px}
+.prices{margin-top:auto;padding-top:4px}
+.price{font-size:17px;font-weight:800;color:var(--red)}
+.old-price{font-size:12.5px;color:var(--text-soft);text-decoration:line-through;margin-left:7px}
+.add-cart{margin-top:9px;border:1.5px solid var(--red);color:var(--red);background:#fff;font-family:inherit;font-weight:700;font-size:12.5px;padding:9px 0;border-radius:8px;cursor:pointer;transition:.15s}
+.add-cart:hover{background:var(--red);color:#fff}
+
+/* Wide banner */
+.banner{margin:34px 0 6px;background:linear-gradient(100deg,var(--red) 0%,#ff5f2e 100%);border-radius:14px;color:#fff;padding:36px 48px;display:flex;align-items:center;justify-content:space-between;overflow:hidden;position:relative}
+.banner::after{content:"❄️";position:absolute;right:220px;bottom:-18px;font-size:110px;opacity:.35}
+.banner h3{font-size:27px;font-weight:900;max-width:420px;line-height:1.2}
+.banner p{margin-top:8px;font-size:14px;opacity:.9}
+.banner .btn{background:#fff;color:var(--red)}
+.banner .btn:hover{background:var(--navy);color:#fff}
+
+/* Brands */
+.brands{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.brand{background:#fff;border:1px solid var(--gray-line);border-radius:12px;height:72px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;color:#9aa2b1;letter-spacing:1px;transition:.15s}
+.brand:hover{color:var(--navy);border-color:var(--navy)}
+
+/* Newsletter */
+.newsletter{background:var(--navy);border-radius:14px;margin:36px 0;color:#fff;padding:38px 48px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.newsletter h3{font-size:22px;font-weight:800}
+.newsletter p{color:#9aa5bd;font-size:13.5px;margin-top:5px}
+.nl-form{display:flex;background:#fff;border-radius:10px;overflow:hidden;min-width:420px}
+.nl-form input{flex:1;border:0;outline:0;padding:14px 18px;font-size:14px;font-family:inherit}
+.nl-form button{background:var(--red);border:0;color:#fff;font-weight:700;padding:0 26px;cursor:pointer;font-family:inherit}
+
+/* ── Footer ──────────────────────────── */
+footer{background:var(--navy);color:#aab3c9;font-size:13px}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:36px;padding:46px 0 36px}
+.footer-grid h5{color:#fff;font-size:14px;font-weight:700;margin-bottom:16px}
+.footer-grid a{display:block;padding:4.5px 0}
+.footer-grid a:hover{color:#fff}
+.f-logo{font-size:22px;font-weight:900;color:#fff;margin-bottom:12px}
+.f-logo span{color:var(--red)}
+.f-contact{display:flex;gap:10px;margin:8px 0;align-items:flex-start}
+.socials{display:flex;gap:10px;margin-top:16px}
+.socials a{width:34px;height:34px;border-radius:50%;background:var(--navy-2);display:flex;align-items:center;justify-content:center;font-size:15px;padding:0}
+.socials a:hover{background:var(--red)}
+.footer-bottom{border-top:1px solid #26314e;padding:18px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.pay-badges{display:flex;gap:8px}
+.pay-badges span{background:#fff;color:var(--navy);font-size:10px;font-weight:800;border-radius:4px;padding:5px 9px}
+
+@media(max-width:960px){
+  .hero .container{grid-template-columns:1fr}
+  .hero-side{grid-template-rows:none;grid-template-columns:1fr 1fr}
+  .grid-5{grid-template-columns:repeat(3,1fr)}
+  .grid-4,.cats{grid-template-columns:repeat(3,1fr)}
+  .services .inner{grid-template-columns:repeat(2,1fr);gap:14px 0}
+  .service+.service{border-left:0}
+  .brands{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .nl-form{min-width:0;width:100%}
+  .nav-links{display:none}
+}
+@media(max-width:600px){
+  .grid-5,.grid-4,.cats{grid-template-columns:repeat(2,1fr)}
+  .hero-main h1{font-size:28px}
+  .hero-main::after{font-size:100px;right:8px;opacity:.35}
+  .header .container{flex-wrap:wrap;height:auto;padding:12px 20px;gap:12px}
+  .search{order:3;width:100%}
+  .banner{flex-direction:column;align-items:flex-start;gap:18px}
+}
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="container">
+    <div>🚚 Livraison partout au Maroc à <strong>35 DH</strong> — Gratuite dès 999 DH</div>
+    <div class="topbar-links">
+      <a href="#">📞 05 20 06 29 20</a>
+      <a href="#">Suivre ma commande</a>
+      <a href="#">Nos magasins</a>
+      <a href="#">FR ▾</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="container">
+    <a href="#" class="logo">TECH<span>NOVA</span><em>High-Tech &amp; Électroménager</em></a>
+    <div class="search">
+      <input type="text" placeholder="Rechercher un produit, une marque, une catégorie…">
+      <button>Rechercher</button>
+    </div>
+    <div class="header-actions">
+      <a href="#" class="h-action"><span class="h-icon">👤</span><span>Bonjour !<b>Mon compte</b></span></a>
+      <a href="#" class="h-action"><span class="h-icon">🤍<span class="badge-count">3</span></span></a>
+      <a href="#" class="h-action"><span class="h-icon">🛒<span class="badge-count">2</span></span><span>Panier<b>1 248 DH</b></span></a>
+    </div>
+  </div>
+</header>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="container">
+    <div class="all-cats">☰ Toutes les catégories</div>
+    <div class="nav-links">
+      <a href="#">Accueil</a>
+      <a href="#">Smartphones</a>
+      <a href="#">TV &amp; Image</a>
+      <a href="#">Électroménager</a>
+      <a href="#">Audio</a>
+      <a href="#">Gaming</a>
+      <a href="#">Promotions</a>
+    </div>
+    <span class="promo-tag">⚡ DESTOCKAGE -50%</span>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-main">
+      <span class="hero-kicker">OFFRE DE LA SEMAINE</span>
+      <h1>Smart TV 55" 4K UHD à partir de <span>3 490 DH</span></h1>
+      <p>Les plus grandes marques au meilleur prix du marché. Paiement à la livraison disponible.</p>
+      <a href="#" class="btn">J'en profite →</a>
+    </div>
+    <div class="hero-side">
+      <div class="side-card a">
+        <small>Nouveauté</small>
+        <h3>Smartphones dès 899 DH</h3>
+        <a href="#">Découvrir →</a>
+      </div>
+      <div class="side-card b">
+        <small>Électroménager</small>
+        <h3>Lave-linge jusqu'à -40%</h3>
+        <a href="#">Voir les offres →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<div class="container">
+  <div class="services">
+    <div class="inner">
+      <div class="service"><span class="ico">🚚</span><div><b>Livraison rapide</b><span>Partout au Maroc — 35 DH</span></div></div>
+      <div class="service"><span class="ico">💵</span><div><b>Paiement à la livraison</b><span>Payez à la réception</span></div></div>
+      <div class="service"><span class="ico">🛡️</span><div><b>Garantie officielle</b><span>Jusqu'à 24 mois</span></div></div>
+      <div class="service"><span class="ico">🎧</span><div><b>Support 7j/7</b><span>WhatsApp &amp; téléphone</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Categories -->
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2>Nos catégories</h2><a href="#" class="see-all">Tout voir →</a></div>
+    <div class="cats">
+      <a href="#" class="cat"><span class="ico">📱</span><b>Smartphones</b><span>128 produits</span></a>
+      <a href="#" class="cat"><span class="ico">📺</span><b>TV &amp; Image</b><span>76 produits</span></a>
+      <a href="#" class="cat"><span class="ico">🧺</span><b>Électroménager</b><span>210 produits</span></a>
+      <a href="#" class="cat"><span class="ico">🎧</span><b>Audio</b><span>94 produits</span></a>
+      <a href="#" class="cat"><span class="ico">🎮</span><b>Gaming</b><span>63 produits</span></a>
+      <a href="#" class="cat"><span class="ico">⌚</span><b>Montres</b><span>48 produits</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Flash sale -->
+<section class="section">
+  <div class="container">
+    <div class="flash-wrap">
+      <div class="flash-head">
+        <h2>⚡ Ventes Flash</h2>
+        <div class="timer">
+          <div class="unit">02<small>JOURS</small></div><span class="sep">:</span>
+          <div class="unit">14<small>HEURES</small></div><span class="sep">:</span>
+          <div class="unit">36<small>MIN</small></div><span class="sep">:</span>
+          <div class="unit">52<small>SEC</small></div>
+        </div>
+        <a href="#" class="see-all">Toutes les ventes flash →</a>
+      </div>
+      <div class="grid-5">
+        <div class="card">
+          <div class="thumb">🎧</div>
+          <span class="promo-badge">-60%</span><span class="wish">🤍</span>
+          <div class="info">
+            <span class="cat-tag">Audio</span>
+            <h4>Écouteurs sans fil Bluetooth 5.4 — Réduction de bruit</h4>
+            <div class="stars">★★★★★<span>(214)</span></div>
+            <div class="prices"><span class="price">249 DH</span><span class="old-price">619 DH</span></div>
+            <button class="add-cart">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="thumb">📱</div>
+          <span class="promo-badge">-25%</span><span class="wish">🤍</span>
+          <div class="info">
+            <span class="cat-tag">Smartphones</span>
+            <h4>Smartphone 6.7" 256 Go — Double SIM, 5000 mAh</h4>
+            <div class="stars">★★★★☆<span>(89)</span></div>
+            <div class="prices"><span class="price">2 190 DH</span><span class="old-price">2 899 DH</span></div>
+            <button class="add-cart">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="thumb">🍳</div>
+          <span class="promo-badge">-35%</span><span class="wish">🤍</span>
+          <div class="info">
+            <span class="cat-tag">Cuisine</span>
+            <h4>Friteuse sans huile 5,5 L — Écran tactile digital</h4>
+            <div class="stars">★★★★★<span>(342)</span></div>
+            <div class="prices"><span class="price">549 DH</span><span class="old-price">849 DH</span></div>
+            <button class="add-cart">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="thumb">⌚</div>
+          <span class="promo-badge">-45%</span><span class="wish">🤍</span>
+          <div class="info">
+            <span class="cat-tag">Montres</span>
+            <h4>Montre connectée AMOLED — Appels Bluetooth, GPS</h4>
+            <div class="stars">★★★★☆<span>(157)</span></div>
+            <div class="prices"><span class="price">399 DH</span><span class="old-price">729 DH</span></div>
+            <button class="add-cart">Ajouter au panier</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="thumb">🔊</div>
+          <span class="promo-badge">-30%</span><span class="wish">🤍</span>
+          <div class="info">
+            <span class="cat-tag">Audio</span>
+            <h4>Enceinte Bluetooth étanche IPX7 — 24h d'autonomie</h4>
+            <div class="stars">★★★★★<span>(96)</span></div>
+            <div class="prices"><span class="price">329 DH</span><span class="old-price">469 DH</span></div>
+            <button class="add-cart">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wide banner -->
+<div class="container">
+  <div class="banner">
+    <div>
+      <h3>Grand froid, petits prix : réfrigérateurs &amp; climatiseurs</h3>
+      <p>Jusqu'à -40% sur une sélection de grandes marques. Installation disponible à Casablanca et Marrakech.</p>
+    </div>
+    <a href="#" class="btn">Voir la sélection</a>
+  </div>
+</div>
+
+<!-- Best sellers -->
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2>Meilleures ventes</h2><a href="#" class="see-all">Tout voir →</a></div>
+    <div class="grid-4">
+      <div class="card">
+        <div class="thumb">🧺</div>
+        <span class="new-badge">NOUVEAU</span><span class="wish">🤍</span>
+        <div class="info">
+          <span class="cat-tag">Électroménager</span>
+          <h4>Lave-linge frontal 8 kg — 1400 tr/min, Inverter</h4>
+          <div class="stars">★★★★★<span>(178)</span></div>
+          <div class="prices"><span class="price">3 290 DH</span></div>
+          <button class="add-cart">Ajouter au panier</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb">📺</div>
+        <span class="promo-badge">-20%</span><span class="wish">🤍</span>
+        <div class="info">
+          <span class="cat-tag">TV &amp; Image</span>
+          <h4>Smart TV 55" 4K UHD — Android TV, HDR10+</h4>
+          <div class="stars">★★★★★<span>(263)</span></div>
+          <div class="prices"><span class="price">3 490 DH</span><span class="old-price">4 399 DH</span></div>
+          <button class="add-cart">Ajouter au panier</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb">🎮</div>
+        <span class="wish">🤍</span>
+        <div class="info">
+          <span class="cat-tag">Gaming</span>
+          <h4>Manette sans fil pro — Compatible PC &amp; consoles</h4>
+          <div class="stars">★★★★☆<span>(74)</span></div>
+          <div class="prices"><span class="price">449 DH</span></div>
+          <button class="add-cart">Ajouter au panier</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumb">☕</div>
+        <span class="promo-badge">-15%</span><span class="wish">🤍</span>
+        <div class="info">
+          <span class="cat-tag">Cuisine</span>
+          <h4>Machine à café expresso 20 bars — Mousseur à lait</h4>
+          <div class="stars">★★★★★<span>(129)</span></div>
+          <div class="prices"><span class="price">1 190 DH</span><span class="old-price">1 399 DH</span></div>
+          <button class="add-cart">Ajouter au panier</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Brands -->
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2>Nos marques partenaires</h2></div>
+    <div class="brands">
+      <div class="brand">SAMSUNG</div>
+      <div class="brand">LG</div>
+      <div class="brand">XIAOMI</div>
+      <div class="brand">BEKO</div>
+      <div class="brand">TCL</div>
+      <div class="brand">PHILIPS</div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<div class="container">
+  <div class="newsletter">
+    <div>
+      <h3>📬 Restez informé de nos promotions</h3>
+      <p>Inscrivez-vous et recevez nos offres exclusives avant tout le monde.</p>
+    </div>
+    <div class="nl-form">
+      <input type="email" placeholder="Votre adresse e-mail">
+      <button>S'inscrire</button>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="f-logo">TECH<span>NOVA</span></div>
+        <p>TECHNOVA, votre destination high-tech &amp; électroménager au Maroc. Les meilleurs prix du marché, avec un service client d'excellence.</p>
+        <div class="f-contact">📍 Bd Mohammed V, Casablanca — Maroc</div>
+        <div class="f-contact">📞 05 20 06 29 20</div>
+        <div class="f-contact">✉️ contact@technova.ma</div>
+        <div class="socials">
+          <a href="#">f</a><a href="#">📸</a><a href="#">▶</a><a href="#">🎵</a>
+        </div>
+      </div>
+      <div>
+        <h5>Boutique</h5>
+        <a href="#">Smartphones</a>
+        <a href="#">TV &amp; Image</a>
+        <a href="#">Électroménager</a>
+        <a href="#">Audio &amp; Son</a>
+        <a href="#">Gaming</a>
+        <a href="#">Promotions</a>
+      </div>
+      <div>
+        <h5>Informations</h5>
+        <a href="#">Qui sommes-nous ?</a>
+        <a href="#">Livraison &amp; retours</a>
+        <a href="#">Conditions générales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Contact</a>
+      </div>
+      <div>
+        <h5>Nos magasins</h5>
+        <a href="#">🏬 Casablanca — Bd Mohammed V</a>
+        <a href="#">🏬 Marrakech — Guéliz</a>
+        <p style="margin-top:14px;font-size:12px">Ouvert du lundi au samedi<br>9h00 – 20h00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TECHNOVA — Tous droits réservés. Design maquette (démo).</span>
+      <div class="pay-badges"><span>CMI</span><span>VISA</span><span>MASTERCARD</span><span>CASH</span></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

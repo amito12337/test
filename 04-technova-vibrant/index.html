@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TECHNOVA — Le plein de tech, le plein de couleurs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --violet:#6d28d9;
+  --violet-deep:#4c1d95;
+  --coral:#ff5c39;
+  --coral-soft:#ffe8e2;
+  --lemon:#ffd166;
+  --mint:#2dd4bf;
+  --cream:#fdf9f3;
+  --ink:#241b3a;
+  --ink-soft:#6f6885;
+  --white:#ffffff;
+  --r-lg:26px;
+  --r-md:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--cream);color:var(--ink);font-size:15px;line-height:1.55}
+h1,h2,h3,h4,.brand{font-family:'Space Grotesk',sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+
+/* ── Ticker ──────────────────────────── */
+.ticker{background:var(--ink);color:var(--lemon);font-weight:700;font-size:13px;padding:9px 0;text-align:center;letter-spacing:.5px}
+
+/* ── Header ──────────────────────────── */
+header{background:var(--cream);position:sticky;top:0;z-index:60;border-bottom:2px solid var(--ink)}
+header .wrap{display:flex;align-items:center;height:72px;gap:30px}
+.brand{font-size:23px;font-weight:700;letter-spacing:-.5px;display:flex;align-items:center;gap:10px}
+.brand .bolt{width:36px;height:36px;background:var(--coral);border:2px solid var(--ink);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:3px 3px 0 var(--ink)}
+.brand u{text-decoration:none;color:var(--violet)}
+.top-nav{display:flex;gap:4px}
+.top-nav a{font-weight:700;font-size:14px;padding:9px 16px;border-radius:99px;border:2px solid transparent}
+.top-nav a:hover{border-color:var(--ink);background:var(--white)}
+.top-nav a.hot{background:var(--lemon);border-color:var(--ink);box-shadow:2px 2px 0 var(--ink)}
+.h-tools{margin-left:auto;display:flex;gap:10px}
+.tool{width:42px;height:42px;background:var(--white);border:2px solid var(--ink);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:17px;cursor:pointer;position:relative;transition:.12s;box-shadow:3px 3px 0 var(--ink)}
+.tool:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.tool .n{position:absolute;top:-8px;right:-8px;background:var(--coral);color:#fff;border:2px solid var(--ink);font-size:10px;font-weight:800;min-width:20px;height:20px;border-radius:99px;display:flex;align-items:center;justify-content:center}
+
+/* ── Hero ────────────────────────────── */
+.hero{background:linear-gradient(135deg,var(--violet) 0%,var(--violet-deep) 100%);border-bottom:2px solid var(--ink);position:relative;overflow:hidden}
+.hero .blob{position:absolute;border-radius:50%;filter:blur(2px)}
+.hero .b1{width:300px;height:300px;background:rgba(255,92,57,.35);top:-90px;right:12%}
+.hero .b2{width:220px;height:220px;background:rgba(45,212,191,.28);bottom:-70px;left:6%}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding-top:70px;padding-bottom:80px;color:#fff}
+.stamp{display:inline-block;background:var(--lemon);color:var(--ink);border:2px solid var(--ink);font-weight:800;font-size:12.5px;padding:7px 16px;border-radius:99px;box-shadow:3px 3px 0 var(--ink);transform:rotate(-2deg);margin-bottom:24px}
+.hero h1{font-size:54px;font-weight:700;line-height:1.04;letter-spacing:-1.5px}
+.hero h1 .hl{background:var(--coral);padding:0 12px;border-radius:14px;display:inline-block;transform:rotate(-1.5deg);box-shadow:4px 4px 0 rgba(0,0,0,.25)}
+.hero p{margin:22px 0 30px;font-size:17px;color:#ddd3f5;max-width:420px}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:'Manrope',sans-serif;font-weight:800;font-size:15px;padding:14px 28px;border-radius:99px;border:2px solid var(--ink);cursor:pointer;transition:.12s;box-shadow:4px 4px 0 var(--ink)}
+.btn:hover{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.btn-coral{background:var(--coral);color:#fff}
+.btn-white{background:#fff;color:var(--ink)}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-badges{display:flex;gap:10px;margin-top:36px;flex-wrap:wrap}
+.mini-badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:99px;font-size:13px;font-weight:600;padding:7px 15px}
+.hero-show{position:relative;display:flex;justify-content:center}
+.show-card{width:330px;height:380px;background:var(--cream);border:2px solid var(--ink);border-radius:30px;box-shadow:8px 8px 0 var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--ink);transform:rotate(2deg)}
+.show-card .big{font-size:120px}
+.show-card b{font-family:'Space Grotesk',sans-serif;font-size:19px}
+.show-card .was{color:var(--ink-soft);text-decoration:line-through;font-size:14px}
+.show-card .now{background:var(--lemon);border:2px solid var(--ink);border-radius:99px;font-weight:800;font-size:18px;padding:6px 20px;box-shadow:3px 3px 0 var(--ink)}
+.sticker{position:absolute;background:var(--mint);border:2px solid var(--ink);border-radius:99px;font-weight:800;font-size:13px;color:var(--ink);padding:9px 16px;box-shadow:3px 3px 0 var(--ink)}
+.st1{top:14px;left:4%;transform:rotate(-8deg)}
+.st2{bottom:40px;right:2%;transform:rotate(6deg);background:var(--coral);color:#fff}
+
+/* ── Marquee ─────────────────────────── */
+.marquee{background:var(--lemon);border-bottom:2px solid var(--ink);padding:11px 0;overflow:hidden;white-space:nowrap;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px}
+.marquee span{margin:0 26px}
+
+/* ── Sections ────────────────────────── */
+.sec{padding:66px 0 0}
+.sec-top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px;gap:16px}
+.sec-top h2{font-size:32px;font-weight:700;letter-spacing:-1px}
+.sec-top h2 mark{background:var(--coral-soft);color:var(--coral);border-radius:10px;padding:0 10px}
+.sec-top .more{font-weight:800;font-size:14px;border-bottom:3px solid var(--coral);padding-bottom:2px;white-space:nowrap}
+
+/* Categories */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat{border:2px solid var(--ink);border-radius:var(--r-lg);padding:26px 22px;position:relative;transition:.12s;box-shadow:5px 5px 0 var(--ink);overflow:hidden;min-height:150px;display:flex;flex-direction:column;justify-content:flex-end}
+.cat:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.cat.a{background:#ede4ff}.cat.b{background:#ffe8e2}.cat.c{background:#dcf9f5}.cat.d{background:#fff3d6}
+.cat .em{position:absolute;top:16px;right:16px;font-size:44px}
+.cat h3{font-size:19px}
+.cat span{font-size:13px;color:var(--ink-soft);font-weight:600}
+
+/* Products */
+.prods{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.prod{background:var(--white);border:2px solid var(--ink);border-radius:var(--r-lg);overflow:hidden;transition:.12s;box-shadow:5px 5px 0 var(--ink);display:flex;flex-direction:column}
+.prod:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.ph{height:185px;display:flex;align-items:center;justify-content:center;font-size:64px;border-bottom:2px solid var(--ink);position:relative}
+.ph.v1{background:#ede4ff}.ph.v2{background:#ffe8e2}.ph.v3{background:#dcf9f5}.ph.v4{background:#fff3d6}
+.flag{position:absolute;top:12px;left:12px;background:var(--coral);color:#fff;border:2px solid var(--ink);font-size:11.5px;font-weight:800;border-radius:99px;padding:4px 11px}
+.flag.new{background:var(--mint);color:var(--ink)}
+.pb{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pb .k{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--ink-soft);text-transform:uppercase}
+.pb h4{font-size:16px;font-weight:700;letter-spacing:-.3px}
+.pb .r{font-size:12.5px;color:#f59e0b;letter-spacing:1px}
+.pb .r i{font-style:normal;color:var(--ink-soft);margin-left:5px;letter-spacing:0}
+.pb .row{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:10px}
+.pb .pr{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px}
+.pb .pr s{font-size:13px;color:var(--ink-soft);margin-left:5px}
+.pb .go{width:40px;height:40px;border-radius:14px;background:var(--lemon);border:2px solid var(--ink);font-size:17px;cursor:pointer;box-shadow:2px 2px 0 var(--ink);transition:.12s}
+.pb .go:hover{transform:translate(2px,2px);box-shadow:0 0 0 var(--ink)}
+
+/* Deal banner */
+.deal{margin-top:66px;background:var(--coral);border:2px solid var(--ink);border-radius:32px;box-shadow:7px 7px 0 var(--ink);color:#fff;display:grid;grid-template-columns:1.2fr .8fr;overflow:hidden}
+.deal .txt{padding:48px 52px}
+.deal .txt small{display:inline-block;background:var(--ink);border-radius:99px;padding:6px 16px;font-weight:800;font-size:12px;letter-spacing:1.5px;margin-bottom:16px}
+.deal h3{font-size:34px;font-weight:700;letter-spacing:-1px;line-height:1.1}
+.deal p{margin:14px 0 26px;color:#ffd9ce;font-size:16px;max-width:380px}
+.deal .visual{background:var(--lemon);border-left:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:110px;position:relative}
+.deal .visual::before{content:"-50%";position:absolute;top:24px;right:24px;background:var(--ink);color:var(--lemon);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;border-radius:99px;padding:12px 18px;transform:rotate(8deg)}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:66px}
+.step{background:var(--white);border:2px solid var(--ink);border-radius:var(--r-lg);padding:28px;box-shadow:5px 5px 0 var(--ink)}
+.step .num{width:44px;height:44px;border-radius:99px;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;margin-bottom:16px}
+.step:nth-child(1) .num{background:#ede4ff}.step:nth-child(2) .num{background:#ffe8e2}.step:nth-child(3) .num{background:#dcf9f5}
+.step h4{font-size:17px;margin-bottom:6px}
+.step p{color:var(--ink-soft);font-size:14px}
+
+/* Reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{border:2px solid var(--ink);border-radius:var(--r-lg);padding:24px;background:var(--white);box-shadow:5px 5px 0 var(--ink)}
+.rev .s{color:#f59e0b;letter-spacing:2px;font-size:14px;margin-bottom:10px}
+.rev p{font-size:14.5px}
+.rev .w{display:flex;gap:11px;align-items:center;margin-top:16px}
+.rev .w .a{width:38px;height:38px;border:2px solid var(--ink);border-radius:99px;display:flex;align-items:center;justify-content:center;font-size:17px;background:var(--coral-soft)}
+.rev .w b{display:block;font-size:13.5px}
+.rev .w span{font-size:12px;color:var(--ink-soft)}
+
+/* Newsletter */
+.news{margin:72px 0;background:var(--violet);border:2px solid var(--ink);border-radius:32px;box-shadow:7px 7px 0 var(--ink);color:#fff;text-align:center;padding:56px 30px;position:relative;overflow:hidden}
+.news::before{content:"✦";position:absolute;top:22px;left:36px;font-size:30px;color:var(--lemon)}
+.news::after{content:"✦";position:absolute;bottom:22px;right:36px;font-size:30px;color:var(--mint)}
+.news h2{font-size:30px;letter-spacing:-.5px}
+.news p{color:#ddd3f5;margin:12px auto 26px;max-width:430px}
+.news-form{display:flex;max-width:440px;margin:0 auto;background:#fff;border:2px solid var(--ink);border-radius:99px;padding:5px;box-shadow:4px 4px 0 var(--ink)}
+.news-form input{flex:1;border:0;outline:0;background:transparent;padding:11px 18px;font-family:'Manrope',sans-serif;font-size:14px;color:var(--ink)}
+.news-form .btn{box-shadow:none;padding:11px 22px}
+.news-form .btn:hover{transform:none}
+
+/* ── Footer ──────────────────────────── */
+footer{background:var(--ink);color:#b9b3cb}
+.f-in{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:38px;padding:52px 0 40px}
+.f-in h5{color:#fff;font-family:'Space Grotesk',sans-serif;font-size:14px;margin-bottom:16px}
+.f-in a{display:block;font-size:14px;padding:4.5px 0}
+.f-in a:hover{color:var(--lemon)}
+.f-in .brand{color:#fff}
+.f-in p{font-size:14px;margin-top:12px;max-width:270px}
+.f-low{border-top:1px solid #3a3153;padding:18px 0;display:flex;justify-content:space-between;font-size:13px;flex-wrap:wrap;gap:8px}
+
+@media(max-width:960px){
+  .hero .wrap{grid-template-columns:1fr;padding-top:46px;padding-bottom:56px}
+  .hero-show{display:none}
+  .top-nav{display:none}
+  .cats,.prods{grid-template-columns:repeat(2,1fr)}
+  .steps,.revs{grid-template-columns:1fr}
+  .deal{grid-template-columns:1fr}
+  .deal .visual{border-left:0;border-top:2px solid var(--ink);min-height:180px}
+  .f-in{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:38px}
+}
+@media(max-width:540px){
+  .prods{grid-template-columns:1fr}
+  .cats{grid-template-columns:1fr 1fr}
+  .deal .txt{padding:32px 26px}
+}
+</style>
+</head>
+<body>
+
+<div class="ticker">🔥 MÉGA SOLDES D'ÉTÉ — jusqu'à -50% sur tout le site + livraison offerte dès 499 DH 🔥</div>
+
+<!-- Header -->
+<header>
+  <div class="wrap">
+    <a class="brand" href="#"><span class="bolt">⚡</span>TECH<u>NOVA</u></a>
+    <nav class="top-nav">
+      <a href="#">Accueil</a>
+      <a href="#">Boutique</a>
+      <a href="#">Nouveautés</a>
+      <a href="#" class="hot">🔥 Promos</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="h-tools">
+      <div class="tool">🔍</div>
+      <div class="tool">👤</div>
+      <div class="tool">🛒<span class="n">4</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <span class="blob b1"></span><span class="blob b2"></span>
+  <div class="wrap">
+    <div>
+      <span class="stamp">⚡ Soldes d'été — jusqu'à -50%</span>
+      <h1>La tech qui a du <span class="hl">peps</span>, aux prix les plus fous.</h1>
+      <p>Gadgets, audio, montres et accessoires colorés — sélectionnés avec amour, livrés avec le sourire, partout au Maroc.</p>
+      <div class="hero-cta">
+        <button class="btn btn-coral">Je fais le plein →</button>
+        <button class="btn btn-white">Voir les nouveautés</button>
+      </div>
+      <div class="hero-badges">
+        <span class="mini-badge">🚚 Livraison 24-48h</span>
+        <span class="mini-badge">💵 Cash à la livraison</span>
+        <span class="mini-badge">⭐ 4,9/5 — 8 200 avis</span>
+      </div>
+    </div>
+    <div class="hero-show">
+      <div class="show-card">
+        <span class="big">🎧</span>
+        <b>Casque Nova Pop</b>
+        <span class="was">799 DH</span>
+        <span class="now">399 DH</span>
+      </div>
+      <span class="sticker st1">🔥 Best-seller</span>
+      <span class="sticker st2">-50% aujourd'hui</span>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <span>⚡ LIVRAISON PARTOUT AU MAROC</span><span>💛 PAIEMENT À LA LIVRAISON</span><span>✅ PRODUITS 100% ORIGINAUX</span><span>🔁 RETOURS SOUS 7 JOURS</span><span>🎁 EMBALLAGE CADEAU OFFERT</span>
+</div>
+
+<!-- Categories -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-top">
+      <h2>Choisis ton <mark>univers</mark></h2>
+      <a href="#" class="more">Toutes les catégories →</a>
+    </div>
+    <div class="cats">
+      <a href="#" class="cat a"><span class="em">🎧</span><h3>Audio</h3><span>Casques, écouteurs, enceintes</span></a>
+      <a href="#" class="cat b"><span class="em">⌚</span><h3>Montres</h3><span>Smartwatches &amp; bracelets</span></a>
+      <a href="#" class="cat c"><span class="em">📸</span><h3>Créateurs</h3><span>Micros, ring lights, trépieds</span></a>
+      <a href="#" class="cat d"><span class="em">🔌</span><h3>Accessoires</h3><span>Chargeurs, coques, câbles</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-top">
+      <h2>Les <mark>pépites</mark> du moment</h2>
+      <a href="#" class="more">Voir toute la boutique →</a>
+    </div>
+    <div class="prods">
+      <div class="prod">
+        <div class="ph v1">🎧<span class="flag">-50%</span></div>
+        <div class="pb">
+          <span class="k">Audio</span>
+          <h4>Casque Nova Pop</h4>
+          <div class="r">★★★★★<i>(412)</i></div>
+          <div class="row"><span class="pr">399 DH<s>799 DH</s></span><button class="go">🛒</button></div>
+        </div>
+      </div>
+      <div class="prod">
+        <div class="ph v2">⌚<span class="flag new">Nouveau</span></div>
+        <div class="pb">
+          <span class="k">Montres</span>
+          <h4>Nova Watch Color</h4>
+          <div class="r">★★★★★<i>(186)</i></div>
+          <div class="row"><span class="pr">449 DH</span><button class="go">🛒</button></div>
+        </div>
+      </div>
+      <div class="prod">
+        <div class="ph v3">🎤<span class="flag">-30%</span></div>
+        <div class="pb">
+          <span class="k">Créateurs</span>
+          <h4>Micro cravate sans fil</h4>
+          <div class="r">★★★★☆<i>(94)</i></div>
+          <div class="row"><span class="pr">279 DH<s>399 DH</s></span><button class="go">🛒</button></div>
+        </div>
+      </div>
+      <div class="prod">
+        <div class="ph v4">🔋</div>
+        <div class="pb">
+          <span class="k">Accessoires</span>
+          <h4>Powerbank pastel 10 000 mAh</h4>
+          <div class="r">★★★★★<i>(263)</i></div>
+          <div class="row"><span class="pr">199 DH</span><button class="go">🛒</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deal -->
+    <div class="deal">
+      <div class="txt">
+        <small>OFFRE ÉCLAIR ⏰</small>
+        <h3>Le pack créateur de contenu complet</h3>
+        <p>Ring light + micro cravate + trépied. Tout pour lancer ta chaîne, à moitié prix cette semaine seulement.</p>
+        <button class="btn btn-white">Je fonce → 499 DH</button>
+      </div>
+      <div class="visual">🎬</div>
+    </div>
+
+    <!-- Steps -->
+    <div class="steps">
+      <div class="step"><span class="num">1</span><h4>Tu choisis</h4><p>Parcours la boutique et ajoute tes pépites au panier en deux clics.</p></div>
+      <div class="step"><span class="num">2</span><h4>On livre</h4><p>Expédition en 24-48h partout au Maroc, avec suivi par WhatsApp.</p></div>
+      <div class="step"><span class="num">3</span><h4>Tu payes à la réception</h4><p>Vérifie ton colis, paye en cash ou par carte. Zéro stress, zéro risque.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-top">
+      <h2>Ils ont <mark>adoré</mark></h2>
+    </div>
+    <div class="revs">
+      <div class="rev">
+        <div class="s">★★★★★</div>
+        <p>« Le casque est encore plus beau en vrai ! Livré à Tanger en 2 jours. Le packaging est trop mignon en plus. »</p>
+        <div class="w"><span class="a">👧</span><div><b>Aya M.</b><span>Tanger</span></div></div>
+      </div>
+      <div class="rev">
+        <div class="s">★★★★★</div>
+        <p>« J'ai pris le pack créateur pour mon TikTok, qualité incroyable pour le prix. Le service client répond en 5 minutes. »</p>
+        <div class="w"><span class="a">🧑</span><div><b>Mehdi R.</b><span>Casablanca</span></div></div>
+      </div>
+      <div class="rev">
+        <div class="s">★★★★★</div>
+        <p>« Site super clair, commande facile, paiement à la livraison. Ma montre est top et la garantie rassure vraiment. »</p>
+        <div class="w"><span class="a">👩</span><div><b>Kenza L.</b><span>Fès</span></div></div>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="news">
+      <h2>Rejoins le club TECHNOVA 💜</h2>
+      <p>-10% sur ta première commande + accès en avant-première aux ventes flash et nouveautés.</p>
+      <div class="news-form">
+        <input type="email" placeholder="ton@email.com">
+        <button class="btn btn-coral">Je m'abonne</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="f-in">
+      <div>
+        <a class="brand" href="#"><span class="bolt">⚡</span>TECH<u style="color:var(--lemon)">NOVA</u></a>
+        <p>La boutique tech la plus fun du Maroc. Des produits qu'on aime, des prix qu'on adore.</p>
+      </div>
+      <div>
+        <h5>Boutique</h5>
+        <a href="#">Audio</a><a href="#">Montres</a><a href="#">Créateurs</a><a href="#">Accessoires</a><a href="#">Promos 🔥</a>
+      </div>
+      <div>
+        <h5>Aide</h5>
+        <a href="#">Suivi de commande</a><a href="#">Livraison &amp; retours</a><a href="#">FAQ</a><a href="#">Garantie</a>
+      </div>
+      <div>
+        <h5>On papote ?</h5>
+        <a href="#">💬 WhatsApp : 06 00 00 00 00</a><a href="#">✉️ hello@technova.ma</a><a href="#">📍 Casablanca, Maroc</a><a href="#">Instagram · TikTok · YouTube</a>
+      </div>
+    </div>
+    <div class="f-low">
+      <span>© 2026 TECHNOVA — Fait avec 💜 au Maroc. Maquette design (démo).</span>
+      <span>CMI · Visa · Mastercard · Cash</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

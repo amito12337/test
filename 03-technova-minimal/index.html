@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TECHNOVA — La tech, en toute simplicité</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#101223;
+  --ink-soft:#5c6072;
+  --indigo:#4f46e5;
+  --indigo-soft:#eef0fe;
+  --bg:#ffffff;
+  --bg-soft:#f7f8fb;
+  --line:#e9eaf0;
+  --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);font-size:15px;line-height:1.55}
+h1,h2,h3,h4,.wordmark{font-family:'Sora',sans-serif}
+a{color:inherit;text-decoration:none}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* ── Header ──────────────────────────── */
+.notice{text-align:center;font-size:13px;padding:9px;background:var(--ink);color:#cdd0e0}
+.notice b{color:#fff}
+header{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:40}
+header .container{display:flex;align-items:center;height:68px;gap:36px}
+.wordmark{font-size:20px;font-weight:800;letter-spacing:-.5px}
+.wordmark i{font-style:normal;color:var(--indigo)}
+nav{display:flex;gap:26px}
+nav a{font-size:14px;font-weight:500;color:var(--ink-soft);padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover,nav a.on{color:var(--ink);border-color:var(--indigo)}
+.h-right{margin-left:auto;display:flex;align-items:center;gap:8px}
+.pill-search{display:flex;align-items:center;gap:8px;background:var(--bg-soft);border:1px solid var(--line);border-radius:99px;padding:9px 16px;color:var(--ink-soft);font-size:13.5px;min-width:220px}
+.rnd{width:40px;height:40px;border-radius:99px;display:flex;align-items:center;justify-content:center;font-size:16px;position:relative;cursor:pointer}
+.rnd:hover{background:var(--bg-soft)}
+.rnd .dot{position:absolute;top:5px;right:5px;width:16px;height:16px;border-radius:99px;background:var(--indigo);color:#fff;font-size:9.5px;font-weight:700;display:flex;align-items:center;justify-content:center}
+
+/* ── Hero ────────────────────────────── */
+.hero{padding:76px 0 70px}
+.hero .container{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--indigo-soft);color:var(--indigo);font-size:12.5px;font-weight:600;border-radius:99px;padding:7px 16px;margin-bottom:22px}
+.hero h1{font-size:50px;font-weight:800;letter-spacing:-1.8px;line-height:1.07}
+.hero h1 em{font-style:normal;color:var(--indigo)}
+.hero p{color:var(--ink-soft);font-size:17px;margin:20px 0 32px;max-width:430px}
+.cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;border-radius:99px;padding:14px 28px;cursor:pointer;border:0;transition:.15s}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--indigo)}
+.btn-line{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.btn-line:hover{border-color:var(--ink)}
+.trust{display:flex;gap:26px;margin-top:38px;color:var(--ink-soft);font-size:13px}
+.trust b{color:var(--ink);display:block;font-size:15px;font-family:'Sora',sans-serif}
+.hero-art{position:relative}
+.hero-card{background:linear-gradient(150deg,#f2f3ff,#e6e9ff 60%,#dfe9ff);border-radius:28px;height:420px;display:flex;align-items:center;justify-content:center;font-size:150px;position:relative;overflow:hidden}
+.hero-card::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;border:1.5px dashed #c3c8f5;animation:spin 30s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.float{position:absolute;background:#fff;border-radius:16px;box-shadow:0 14px 40px rgba(16,18,35,.12);padding:14px 18px;font-size:13px;font-weight:600}
+.float small{display:block;color:var(--ink-soft);font-weight:500;font-size:11.5px}
+.float.f1{top:26px;left:-24px}
+.float.f2{bottom:36px;right:-18px;display:flex;gap:10px;align-items:center}
+.float .avatar-stack{display:flex}
+.float .avatar-stack span{width:26px;height:26px;border-radius:99px;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:12px;margin-left:-8px;background:var(--indigo-soft)}
+
+/* ── Logos strip ─────────────────────── */
+.logos{border-block:1px solid var(--line);padding:22px 0;background:var(--bg-soft)}
+.logos .container{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;color:#a7abbd;font-weight:700;letter-spacing:2px;font-size:14px}
+
+/* ── Sections ────────────────────────── */
+section.block{padding:72px 0 0}
+.blk-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:30px}
+.blk-head h2{font-size:28px;font-weight:800;letter-spacing:-1px}
+.blk-head p{color:var(--ink-soft);margin-top:6px}
+.link-more{font-weight:600;font-size:14px;color:var(--indigo);white-space:nowrap}
+
+/* Categories */
+.cat-row{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.cat-tile{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:24px 18px;text-align:center;transition:.18s}
+.cat-tile:hover{background:#fff;border-color:var(--indigo);box-shadow:0 12px 30px rgba(79,70,229,.1);transform:translateY(-3px)}
+.cat-tile .ic{width:56px;height:56px;margin:0 auto 12px;background:#fff;border:1px solid var(--line);border-radius:99px;display:flex;align-items:center;justify-content:center;font-size:24px}
+.cat-tile b{font-size:13.5px;font-family:'Sora',sans-serif}
+.cat-tile span{display:block;font-size:12px;color:var(--ink-soft);margin-top:2px}
+
+/* Products */
+.p-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.p-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.18s;background:#fff;display:flex;flex-direction:column}
+.p-card:hover{box-shadow:0 18px 44px rgba(16,18,35,.09);transform:translateY(-4px)}
+.p-thumb{position:relative;height:200px;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;font-size:66px}
+.p-badge{position:absolute;top:12px;left:12px;background:var(--ink);color:#fff;font-size:11px;font-weight:600;border-radius:99px;padding:5px 11px}
+.p-badge.sale{background:var(--indigo)}
+.p-fav{position:absolute;top:10px;right:10px;width:32px;height:32px;background:#fff;border:1px solid var(--line);border-radius:99px;display:flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer}
+.p-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:5px;flex:1}
+.p-body .kind{font-size:11.5px;font-weight:600;color:var(--ink-soft);text-transform:uppercase;letter-spacing:1px}
+.p-body h4{font-size:15px;font-weight:700;letter-spacing:-.2px}
+.p-rate{font-size:12px;color:#f5a623;letter-spacing:1px}
+.p-rate span{color:var(--ink-soft);margin-left:5px;letter-spacing:0}
+.p-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:12px}
+.p-price{font-family:'Sora',sans-serif;font-weight:800;font-size:17px}
+.p-price s{color:var(--ink-soft);font-weight:500;font-size:13px;margin-left:6px}
+.p-add{width:38px;height:38px;border-radius:99px;background:var(--indigo-soft);color:var(--indigo);border:0;font-size:18px;font-weight:600;cursor:pointer;transition:.15s}
+.p-add:hover{background:var(--indigo);color:#fff}
+
+/* Split banner */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:72px}
+.split .panel{border-radius:24px;padding:44px;display:flex;flex-direction:column;justify-content:center;min-height:260px;position:relative;overflow:hidden}
+.panel.dark{background:var(--ink);color:#fff}
+.panel.soft{background:var(--indigo-soft)}
+.panel::after{position:absolute;right:26px;bottom:18px;font-size:96px;opacity:.9}
+.panel.dark::after{content:"⌚"}
+.panel.soft::after{content:"💻"}
+.panel small{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;opacity:.7}
+.panel h3{font-family:'Sora',sans-serif;font-size:24px;font-weight:800;letter-spacing:-.5px;margin:10px 0 8px;max-width:280px}
+.panel p{font-size:14px;opacity:.75;max-width:270px;margin-bottom:20px}
+.panel .btn{width:max-content}
+.panel.soft .btn{background:var(--indigo);color:#fff}
+
+/* Value props */
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:72px}
+.value{text-align:center;padding:30px 18px;border-radius:var(--radius);background:var(--bg-soft)}
+.value .ic{width:52px;height:52px;margin:0 auto 14px;background:#fff;border-radius:99px;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 6px 18px rgba(16,18,35,.07)}
+.value b{font-family:'Sora',sans-serif;font-size:14.5px;display:block;margin-bottom:5px}
+.value span{color:var(--ink-soft);font-size:13px}
+
+/* Testimonials */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.quote{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:#fff}
+.quote .stars{color:#f5a623;font-size:13px;letter-spacing:2px;margin-bottom:12px}
+.quote p{font-size:14.5px;color:var(--ink);line-height:1.65}
+.quote .who{display:flex;align-items:center;gap:12px;margin-top:18px}
+.quote .who .av{width:38px;height:38px;border-radius:99px;background:var(--indigo-soft);display:flex;align-items:center;justify-content:center;font-size:16px}
+.quote .who b{display:block;font-size:13.5px}
+.quote .who span{font-size:12px;color:var(--ink-soft)}
+
+/* CTA */
+.cta{margin:80px 0;background:var(--ink);border-radius:28px;padding:60px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(79,70,229,.5),transparent 70%);top:-200px;right:-100px}
+.cta h2{font-size:32px;font-weight:800;letter-spacing:-1px;position:relative}
+.cta p{color:#b7bacb;margin:14px auto 30px;max-width:440px;position:relative}
+.cta-form{position:relative;display:flex;max-width:440px;margin:0 auto;background:#fff;border-radius:99px;padding:5px}
+.cta-form input{flex:1;border:0;outline:0;padding:11px 20px;font-size:14px;border-radius:99px;font-family:'Inter',sans-serif}
+.cta-form .btn{padding:12px 24px}
+
+/* ── Footer ──────────────────────────── */
+footer{border-top:1px solid var(--line);background:var(--bg-soft)}
+.f-cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding:54px 0 42px}
+.f-cols h5{font-family:'Sora',sans-serif;font-size:13.5px;margin-bottom:16px}
+.f-cols a{display:block;color:var(--ink-soft);font-size:14px;padding:4.5px 0}
+.f-cols a:hover{color:var(--indigo)}
+.f-cols .about{color:var(--ink-soft);font-size:14px;margin-top:12px;max-width:280px}
+.f-base{border-top:1px solid var(--line);padding:18px 0;display:flex;justify-content:space-between;font-size:13px;color:var(--ink-soft);flex-wrap:wrap;gap:8px}
+
+@media(max-width:960px){
+  .hero .container{grid-template-columns:1fr}
+  .hero-art{display:none}
+  nav,.pill-search{display:none}
+  .cat-row{grid-template-columns:repeat(3,1fr)}
+  .p-grid,.values{grid-template-columns:repeat(2,1fr)}
+  .split,.quotes{grid-template-columns:1fr}
+  .f-cols{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:38px}
+  .cta{padding:44px 24px}
+}
+@media(max-width:560px){
+  .p-grid,.cat-row,.values{grid-template-columns:1fr 1fr}
+  .cat-row{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="notice">Livraison <b>gratuite</b> dès 499 DH · Paiement à la livraison partout au Maroc</div>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <a class="wordmark" href="#">TECH<i>NOVA</i></a>
+    <nav>
+      <a href="#" class="on">Accueil</a>
+      <a href="#">Boutique</a>
+      <a href="#">Nouveautés</a>
+      <a href="#">Promos</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="h-right">
+      <div class="pill-search">🔍 Rechercher un produit…</div>
+      <div class="rnd">👤</div>
+      <div class="rnd">🤍</div>
+      <div class="rnd">🛍️<span class="dot">2</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div>
+      <span class="eyebrow">✦ Nouvelle collection 2026</span>
+      <h1>La tech qui simplifie <em>votre quotidien</em>.</h1>
+      <p>Une sélection soignée de produits high-tech au meilleur prix, testés et garantis. Livrés chez vous partout au Maroc.</p>
+      <div class="cta-row">
+        <button class="btn btn-dark">Découvrir la boutique →</button>
+        <button class="btn btn-line">Voir les promos</button>
+      </div>
+      <div class="trust">
+        <div><b>4,9 / 5</b>Note clients</div>
+        <div><b>+50 000</b>Commandes livrées</div>
+        <div><b>12 mois</b>De garantie</div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-card">🎧</div>
+      <div class="float f1"><small>Prix vérifié</small>💜 Meilleur rapport qualité-prix</div>
+      <div class="float f2">
+        <div class="avatar-stack"><span>😀</span><span>😄</span><span>🙂</span></div>
+        <div><small>Cette semaine</small>+1 200 clients satisfaits</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Logos -->
+<div class="logos">
+  <div class="container">
+    <span>SAMSUNG</span><span>XIAOMI</span><span>ANKER</span><span>JBL</span><span>LOGITECH</span><span>HUAWEI</span>
+  </div>
+</div>
+
+<!-- Categories -->
+<section class="block">
+  <div class="container">
+    <div class="blk-head">
+      <div><h2>Parcourir par catégorie</h2><p>Trouvez exactement ce qu'il vous faut.</p></div>
+      <a href="#" class="link-more">Toutes les catégories →</a>
+    </div>
+    <div class="cat-row">
+      <a href="#" class="cat-tile"><span class="ic">🎧</span><b>Audio</b><span>84 produits</span></a>
+      <a href="#" class="cat-tile"><span class="ic">⌚</span><b>Montres</b><span>36 produits</span></a>
+      <a href="#" class="cat-tile"><span class="ic">📱</span><b>Smartphones</b><span>52 produits</span></a>
+      <a href="#" class="cat-tile"><span class="ic">💻</span><b>Informatique</b><span>67 produits</span></a>
+      <a href="#" class="cat-tile"><span class="ic">🔌</span><b>Accessoires</b><span>120 produits</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Featured products -->
+<section class="block">
+  <div class="container">
+    <div class="blk-head">
+      <div><h2>Nos coups de cœur</h2><p>La sélection préférée de nos clients ce mois-ci.</p></div>
+      <a href="#" class="link-more">Voir toute la boutique →</a>
+    </div>
+    <div class="p-grid">
+      <div class="p-card">
+        <div class="p-thumb">🎧<span class="p-badge sale">-40%</span><span class="p-fav">🤍</span></div>
+        <div class="p-body">
+          <span class="kind">Audio</span>
+          <h4>Casque Nova Silence ANC</h4>
+          <div class="p-rate">★★★★★<span>(324)</span></div>
+          <div class="p-foot"><span class="p-price">599 DH<s>999 DH</s></span><button class="p-add">+</button></div>
+        </div>
+      </div>
+      <div class="p-card">
+        <div class="p-thumb">⌚<span class="p-badge">Nouveau</span><span class="p-fav">🤍</span></div>
+        <div class="p-body">
+          <span class="kind">Montres</span>
+          <h4>Nova Watch S2 — AMOLED</h4>
+          <div class="p-rate">★★★★★<span>(198)</span></div>
+          <div class="p-foot"><span class="p-price">449 DH</span><button class="p-add">+</button></div>
+        </div>
+      </div>
+      <div class="p-card">
+        <div class="p-thumb">🔋<span class="p-fav">🤍</span></div>
+        <div class="p-body">
+          <span class="kind">Accessoires</span>
+          <h4>Powerbank 20 000 mAh — 65 W</h4>
+          <div class="p-rate">★★★★☆<span>(87)</span></div>
+          <div class="p-foot"><span class="p-price">299 DH</span><button class="p-add">+</button></div>
+        </div>
+      </div>
+      <div class="p-card">
+        <div class="p-thumb">⌨️<span class="p-badge sale">-25%</span><span class="p-fav">🤍</span></div>
+        <div class="p-body">
+          <span class="kind">Informatique</span>
+          <h4>Clavier mécanique sans fil</h4>
+          <div class="p-rate">★★★★★<span>(142)</span></div>
+          <div class="p-foot"><span class="p-price">449 DH<s>599 DH</s></span><button class="p-add">+</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Split banners -->
+    <div class="split">
+      <div class="panel dark">
+        <small>Édition limitée</small>
+        <h3>Nova Watch S2 — Titanium</h3>
+        <p>L'élégance rencontre la performance. Autonomie 14 jours.</p>
+        <button class="btn btn-line">Découvrir</button>
+      </div>
+      <div class="panel soft">
+        <small>Espace travail</small>
+        <h3>Setup bureau à partir de 999 DH</h3>
+        <p>Écrans, claviers, supports — tout pour un bureau parfait.</p>
+        <button class="btn">Explorer</button>
+      </div>
+    </div>
+
+    <!-- Values -->
+    <div class="values">
+      <div class="value"><span class="ic">🚚</span><b>Livraison rapide</b><span>24-48h partout au Maroc</span></div>
+      <div class="value"><span class="ic">💳</span><b>Paiement flexible</b><span>Carte ou à la livraison</span></div>
+      <div class="value"><span class="ic">↩️</span><b>Retours faciles</b><span>7 jours pour changer d'avis</span></div>
+      <div class="value"><span class="ic">🛡️</span><b>Garantie 12 mois</b><span>Produits 100% originaux</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="block">
+  <div class="container">
+    <div class="blk-head">
+      <div><h2>Ils nous font confiance</h2><p>Plus de 50 000 clients servis dans tout le Maroc.</p></div>
+    </div>
+    <div class="quotes">
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>« Commande reçue en 24h à Rabat. Le casque est exactement comme sur les photos, qualité au top. Je recommande vivement. »</p>
+        <div class="who"><span class="av">👩</span><div><b>Salma B.</b><span>Rabat</span></div></div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>« Service client très réactif sur WhatsApp. Ils m'ont aidé à choisir la bonne montre. Paiement à la livraison, zéro stress. »</p>
+        <div class="who"><span class="av">👨</span><div><b>Youssef E.</b><span>Casablanca</span></div></div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>« Troisième commande chez Technova. Prix imbattables et produits toujours originaux avec la garantie. Ma boutique tech préférée. »</p>
+        <div class="who"><span class="av">🧕</span><div><b>Imane K.</b><span>Marrakech</span></div></div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <h2>Recevez -10% sur votre première commande</h2>
+      <p>Inscrivez-vous à notre newsletter et soyez informé en avant-première de nos offres et nouveautés.</p>
+      <div class="cta-form">
+        <input type="email" placeholder="Votre adresse e-mail">
+        <button class="btn btn-dark">Je m'inscris</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="f-cols">
+      <div>
+        <a class="wordmark" href="#">TECH<i>NOVA</i></a>
+        <p class="about">La tech de qualité, simplement. Une sélection exigeante de produits high-tech livrés partout au Maroc.</p>
+      </div>
+      <div>
+        <h5>Boutique</h5>
+        <a href="#">Audio</a><a href="#">Montres connectées</a><a href="#">Smartphones</a><a href="#">Informatique</a><a href="#">Accessoires</a>
+      </div>
+      <div>
+        <h5>Informations</h5>
+        <a href="#">À propos</a><a href="#">Livraison &amp; retours</a><a href="#">Conditions générales</a><a href="#">Confidentialité</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="#">📞 06 00 00 00 00</a><a href="#">✉️ contact@technova.ma</a><a href="#">📍 Casablanca, Maroc</a>
+      </div>
+    </div>
+    <div class="f-base">
+      <span>© 2026 TECHNOVA — Tous droits réservés. Maquette design (démo).</span>
+      <span>CMI · Visa · Mastercard · Paiement à la livraison</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
