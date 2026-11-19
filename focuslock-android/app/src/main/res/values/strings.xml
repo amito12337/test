@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FocusLock</string>
+    <string name="accessibility_label">FocusLock blocker</string>
+    <string name="accessibility_description">While a focus session is running, FocusLock watches which app is in the foreground and brings you back to the focus screen if it is not allowed. It reads only the package name of the foreground window; it does not read screen content or what you type. Nothing is blocked when no session is running.</string>
+</resources>
